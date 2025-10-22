@@ -8,12 +8,13 @@ Alphabets = [
 
 def ceaser(Start_text, Shift_amount, ciper_direction):
     Text_res = ""
-    for letter in Start_text:
-        position = Alphabets.index(letter)
-        if ciper_direction == "decode":
+    if ciper_direction == "decode":
             Shift_amount *= -1
             # 5 * -1  = -5
-        new_positon = Shift_amount + position
+    for letter in Start_text:
+        position = Alphabets.index(letter)
+        
+        new_positon = position + Shift_amount
         Text_res += Alphabets[new_positon]
     print(f"The {ciper_direction} text is {Text_res}")  
             
